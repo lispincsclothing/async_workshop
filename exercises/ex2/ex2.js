@@ -83,4 +83,4 @@ th1(function ready(text){ // will do and wait until th1
 	});
 })
 
-// no name for this pattern so far when Kyle asked - but essentially a promise without the fancy API. Time independent wrapper around future value. 
+// no name for this pattern so far when Kyle asked - but essentially a promise without the fancy API. So promise is really Time independent wrapper around future value. 
