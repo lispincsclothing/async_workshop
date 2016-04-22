@@ -27,7 +27,7 @@ function getFile(file) {
 	});
 }
 
-var responses = {};
+var responses = {}; //storing state outside the function (global)
 
 function processResponse(url, text) {
 	if (!(url in responses)) {
@@ -44,7 +44,7 @@ function processResponse(url, text) {
 				responses[files[i]] = null;
 			}
 		} else {
-			return false;
+			return false;  //returns before complete below
 		}
 	}
 	output("Complete!");
