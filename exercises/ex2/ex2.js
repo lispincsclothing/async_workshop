@@ -40,7 +40,7 @@ function getFile(file) {
 		// fakeAjax(file, cb); //this code works, but is lazy callback.  Isn't doing the Ajax callback yet.  Not good, since we want to make requests in parallell.
 
 		// scenario 1
-		// cb(val);
+		// fn = cb;
 
 		// scenario 2
 		// cb(val)
@@ -83,4 +83,4 @@ th1(function ready(text){ // will do and wait until th1
 	});
 })
 
-// no name for this pattern so far when Kyle asked - but essentially a promise without the fancy API. So promise is really Time independent wrapper around future value. 
+// no name for this pattern so far when Kyle asked - but essentially a promise without the fancy API. So promise is really Time independent wrapper around future value.
