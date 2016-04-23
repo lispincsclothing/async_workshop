@@ -26,6 +26,8 @@ function getFile(file) {
 	});
 }
 
+
+
 // Request all files at once in
 // "parallel" via `getFile(..)`.
 //
@@ -34,3 +36,14 @@ function getFile(file) {
 // is done.
 
 // ???
+["file1", "file2", "file3"]
+.map(getFile)
+.reduce(function combine(chain, pr) {
+	return chain.then(function chainPr() {
+		return pr;
+	}).then(output);
+// }, new Promise(function(resolve, reject){ resolve(); })) //Longhand version of promise.resolve
+}, Promise.resolve()) //shorthand version of promise.resolve
+.then(function () {
+	output("Complete!");
+});
