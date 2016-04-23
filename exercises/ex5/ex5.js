@@ -29,6 +29,7 @@ function getFile(file) {
 // request an array of files at once in "parallel"
 // ???
 
+// still not clear why you'd use .seq rather than .then
 getFile("file1")
 .val(output)
 .seq(getFile("file2"))
