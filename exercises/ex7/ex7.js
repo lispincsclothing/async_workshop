@@ -35,7 +35,7 @@ function getFile(file) {
 // ???
 ASQ()
 .runner(function*() {
-	// problem with below, not doing it in parallell
+	// problem with below, not doing it in parallel
 	// var text1 = yield getFile("file1");
 	// output(text1);
 	// var text2 = yield getFile("file2");
