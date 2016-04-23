@@ -9,6 +9,7 @@ function fakeAjax(url,cb) {
 	console.log("Requesting: " + url);
 
 	setTimeout(function(){
+		console.log("In setTimeout");
 		cb(fake_responses[url]);
 	},randomDelay);
 }
@@ -37,7 +38,7 @@ function getFile(file) {
 
 // ???
 ["file1", "file2", "file3"]
-.map(getFile)
+.map(getFile) //actually excuting, not passint a function
 .reduce(function combine(chain, pr) {
 	return chain.then(function chainPr() {
 		return pr;
@@ -47,3 +48,17 @@ function getFile(file) {
 .then(function () {
 	output("Complete!");
 });
+
+// above equivalent to: (Code won't work becuse p1, p2, p3)
+// Promise.resolve()
+// .then(function chainP1() {
+// 	return p1;
+// })
+// .then(output)
+// .then(function chainP2() {
+// 	return p2;
+// })
+// .then(output)
+// .then(function chainP3() {
+// 	return p3;
+// })
